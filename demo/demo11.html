@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background: red;
+            margin: 100px auto;
+            position: relative;
+        }
+
+        .box:before {
+            content: '';
+            width: 100px;
+            height: 100px;
+            background: blue;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .box:after {
+            content: '';
+            width: 100px;
+            height: 100px;
+            background: green;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+
+        h1 {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1:nth-of-type(1) {
+            color: red;
+        }
+
+        h1:nth-of-type(2) {
+            color: blue;
+        }
+
+        h1:nth-of-type(3) {
+            color: green;
+        }
+
+        h1:nth-of-type(4) {
+            color: yellow;
+        }
+
+        h1:nth-of-type(5) {
+            color: pink;
+        }
+
+        h2 {
+            color: red;
+        }
+
+        h2:nth-of-type(2) {
+            color: blue;
+        }
+    </style>
+    <script>
+        function getStyle(obj, attr) {
+            if (obj.currentStyle) {
+                return obj.currentStyle[attr];
+            } else {
+                return getComputedStyle(obj, false)[attr];
+            }
+        }
+        function getColor(obj) {
+            var color = getStyle(obj, 'color');
+            if (color == 'rgb(0, 0, 0)') {
+                return '';
+            } else {
+                return color;
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <div class="box"></div>
+    <h1>hello</h1>
+    <h1>hello</h1>
+    <h1>hello</h1>
+    <h1>hello</h1>
+    <h1>hello</h1>
+    <h2>world</h2>
+    <h2>world</h2>
+    <h2>world</h2>
+    <h2>world</h2>
+    <h2>world</h2>
+</body>
+
+</html>
